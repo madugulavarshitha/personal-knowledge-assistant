@@ -1,0 +1,11 @@
+flask
+flask-cors
+google-generativeai
+gspread
+oauth2client
+python-dotenv
+PyMuPDF
+openai-whisper
+moviepy==1.0.3
+pillow
+imageio-ffmpeg

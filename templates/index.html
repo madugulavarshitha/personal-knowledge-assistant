@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Knowledge Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="brand">
+            <div class="brand-mark">KA</div>
+            <div>
+                <strong>Knowledge Assistant</strong>
+                <span>AI workspace</span>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <a href="#notes" class="active">Notes</a>
+            <a href="#uploads">Uploads</a>
+            <a href="#search">Search</a>
+            <a href="#results">Results</a>
+        </nav>
+    </aside>
+
+    <main class="app-shell">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">Personal Knowledge Assistant</p>
+                <h1>Capture, summarize, and search your knowledge.</h1>
+            </div>
+            <div class="status-pill" id="systemStatus">Ready</div>
+        </header>
+
+        <section class="workspace">
+            <section class="panel note-panel" id="notes">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Note</p>
+                        <h2>Add Knowledge</h2>
+                    </div>
+                    <button class="ghost-button" id="clearNoteBtn" type="button">Clear</button>
+                </div>
+
+                <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+                <button class="primary-button" id="addNoteBtn" type="button">Submit Note</button>
+            </section>
+
+            <section class="panel" id="uploads">
+                <div class="panel-heading">
+                    <div>
+                        <p class="eyebrow">Files</p>
+                        <h2>Upload Sources</h2>
+                    </div>
+                </div>
+
+                <div class="upload-grid">
+                    <label class="upload-tile">
+                        <span>PDF</span>
+                        <input type="file" id="pdfInput" accept=".pdf">
+                        <button type="button" data-upload="pdf">Upload PDF</button>
+                    </label>
+
+                    <label class="upload-tile">
+                        <span>Audio</span>
+                        <input type="file" id="audioInput" accept="audio/*">
+                        <button type="button" data-upload="audio">Upload Audio</button>
+                    </label>
+
+                    <label class="upload-tile">
+                        <span>Video</span>
+                        <input type="file" id="videoInput" accept="video/*">
+                        <button type="button" data-upload="video">Upload Video</button>
+                    </label>
+                </div>
+            </section>
+        </section>
+
+        <section class="panel search-panel" id="search">
+            <div>
+                <p class="eyebrow">Semantic Search</p>
+                <h2>Ask Your Knowledge Base</h2>
+            </div>
+            <div class="search-row">
+                <input type="text" id="searchInput" placeholder="Ask a question...">
+                <button class="primary-button" id="searchBtn" type="button">Search</button>
+            </div>
+        </section>
+
+        <section class="results-grid" id="results">
+            <article class="panel result-panel">
+                <p class="eyebrow">Summary</p>
+                <h2 id="summaryText">No summary yet</h2>
+            </article>
+
+            <article class="panel result-panel">
+                <p class="eyebrow">Tags</p>
+                <div class="chips" id="tagsList"></div>
+            </article>
+
+            <article class="panel result-panel wide">
+                <p class="eyebrow">Insights</p>
+                <ul class="insight-list" id="insightsList"></ul>
+            </article>
+
+            <article class="panel result-panel wide">
+                <p class="eyebrow">Answer</p>
+                <p class="answer" id="answerText">Results will appear here.</p>
+            </article>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
