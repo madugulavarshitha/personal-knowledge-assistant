@@ -11,17 +11,6 @@ AI-powered personal knowledge assistant built using Flask, Gemini AI, and Google
 - Google Sheets Integration
 - Audio and Video Support
 
-## Screenshots
-
-### Home Page
-![Home](screenshots/home.png)
-
-### AI Summary
-![Summary](screenshots/summary.png)
-
-### Smart Search
-![Search](screenshots/search.png)
-
 ## Technologies Used
 - Python
 - Flask
